@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-saturn-50: #f0f4ff;
+  --color-saturn-100: #dbe4ff;
+  --color-saturn-200: #bac8ff;
+  --color-saturn-300: #91a7ff;
+  --color-saturn-400: #748ffc;
+  --color-saturn-500: #5c7cfa;
+  --color-saturn-600: #4c6ef5;
+  --color-saturn-700: #4263eb;
+  --color-saturn-800: #3b5bdb;
+  --color-saturn-900: #364fc7;
+  --color-space-900: #0a0e1a;
+  --color-space-800: #111827;
+  --color-space-700: #1a2235;
+  --color-space-600: #243049;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-space-900);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-space-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-space-600);
+  border-radius: 3px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(92, 124, 250, 0.15); }
+  50% { box-shadow: 0 0 30px rgba(92, 124, 250, 0.3); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #f1f5f9;
+}
+
+.markdown-content h1 { font-size: 1.25rem; }
+.markdown-content h2 { font-size: 1.125rem; }
+.markdown-content h3 { font-size: 1rem; }
+
+.markdown-content p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.markdown-content ul { list-style-type: disc; }
+.markdown-content ol { list-style-type: decimal; }
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+.markdown-content code {
+  font-family: var(--font-mono);
+  background: var(--color-space-700);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.markdown-content pre {
+  background: var(--color-space-800);
+  border: 1px solid var(--color-space-600);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.markdown-content strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid var(--color-saturn-500);
+  padding-left: 1rem;
+  margin-bottom: 0.75rem;
+  color: #94a3b8;
+}
