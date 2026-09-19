@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'https://backend-tawny-three-93.vercel.app/',
+        target: import.meta.env.VITE_API_URL,
         changeOrigin: true,
       },
     },
